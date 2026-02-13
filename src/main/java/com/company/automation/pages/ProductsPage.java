@@ -14,9 +14,21 @@ public class ProductsPage {
        PageFactory.initElements(driver, this);
     }
 
-    @FindBy(className ="title") private WebElement pageTitle;
+    @FindBy(className ="title")
+    private WebElement pageTitle;
+
+   @FindBy(id = "react-burger-menu-btn")
+   public WebElement menuBtn;
+
+   @FindBy(id = "logout_sidebar_link")
+   public WebElement logOutBtn;
 
    public String getPageTitle(){
        return pageTitle.getText();
+   }
+
+   public void logout(){
+    menuBtn.click();
+    logOutBtn.click();
    }
 }
