@@ -1,3 +1,4 @@
+@login
 Feature: SauceDemo Login
 
   Scenario Outline: Login with multiple credentials
