@@ -1,9 +1,9 @@
 @login
 Feature: SauceDemo Login
 
-  Scenario Outline: Login with multiple credentials
+  Scenario: Login with multiple credentials
     Given user is on SauceDemo login page
-    When user logs in with "<username>" and "<password>"
+    When user logs in using excel data
     Then products page should be displayed
 
     Examples:

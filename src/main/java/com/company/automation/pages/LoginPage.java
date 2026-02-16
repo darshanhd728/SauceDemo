@@ -25,9 +25,27 @@ public class LoginPage {
     @FindBy(id = "login-button")
     private WebElement loginBtn;
 
+    @FindBy(xpath = "//*[@id=\"login_button_container\"]/div/form/div[3]/h3")
+    public WebElement errorMessage;
+
     public void login(String user, String pass) {
         username.sendKeys(user);
         password.sendKeys(pass);
         loginBtn.click();
     }
+    public boolean isErrorDisplayed() {
+
+        try {
+            return errorMessage.isDisplayed();
+        }
+        catch(Exception e) {
+            return false;
+        }
+    }
+
+    public String getErrorMessage() {
+
+        return errorMessage.getText();
+    }
+
 }
